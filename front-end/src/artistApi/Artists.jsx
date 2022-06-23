@@ -1,21 +1,21 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Trainer from "../Trainer";
-import AddNewTrainer from "./AddNewTrainer";
-import DeleteTrainer from "./DeleteTrainer";
+import Artist from "../Artist";
+import AddNewArtist from "./AddNewArtist";
+import DeleteArtist from "./DeleteArtist";
 import ReadById from "./ReadById";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Navi from "./Nav";
 
-const Trainers= () => {
+const Artist= () => {
 
-    const [trainers, setTrainers] = useState([]);
+    const [artists, setArtists] = useState([]);
     const [fetchData, setFetchData] = useState(false);
 
 
     useEffect(() => {
         axios.get("http://localhost:4494/trainers/readAll")
-            .then(res => setTrainers(res.data))
+            .then(res => setArtists(res.data))
             .catch(err => console.error(err));
     }, [fetchData]);
 
@@ -37,10 +37,10 @@ const Trainers= () => {
         <BrowserRouter>
         <Navi/>
         <Routes>
-            <Route exact path="/" element={trainers.map(trainer => <Trainer key={trainer._id} id={trainer._id} name={trainer.name} age={trainer.age} specialism={trainer.specialism}/>)}/>
-            <Route path="/EditList" element={<AddNewTrainer getData={setFetchData} fetchData={fetchData}/>}/>
-            <Route path="/DeleteTrainer" element={<DeleteTrainer getData={setFetchData} fetchData={fetchData}/>}/>
-            <Route path="/FindTrainer" element={<ReadById getData={setFetchData} fetchData={fetchData}/>}/>
+            <Route exact path="/" element={artists.map(artist => <Artist key={artist._id} id={artist._id} name={artist.name} age={artist.age} specialism={artist.specialism}/>)}/>
+            <Route path="/EditList" element={<AddNewArtist getData={setFetchData} fetchData={fetchData}/>}/>
+            <Route path="/DeleteArtist" element={<DeleteArtist getData={setFetchData} fetchData={fetchData}/>}/>
+            <Route path="/FindArtist" element={<ReadById getData={setFetchData} fetchData={fetchData}/>}/>
         </Routes>
         </BrowserRouter>
 
@@ -48,4 +48,4 @@ const Trainers= () => {
      );
 }
 
-export default Trainers;
+export default Artists;

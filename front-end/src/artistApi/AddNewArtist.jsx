@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 
-const AddNewTrainer = ({ getData, fetchData }) => {
+const AddNewArtist = ({ getData, fetchData }) => {
   //3 states
   //name
   //age

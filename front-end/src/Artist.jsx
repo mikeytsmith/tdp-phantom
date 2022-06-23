@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 // const props = { name, age, specialism};
-const Trainer = ({id, name, age, specialism}) => {
+const Artist = ({id, name, age, specialism}) => {
     return (
         <div>
             <h3>ID: {id}</h3>
@@ -11,9 +11,9 @@ const Trainer = ({id, name, age, specialism}) => {
     )
 }
 
-export default Trainer;
+export default Artist;
 
-Trainer.propTypes = {
+Artist.propTypes = {
     name: PropTypes.string.isRequired,
     age: PropTypes.number.isRequired,
     specialism: PropTypes.string.isRequired,

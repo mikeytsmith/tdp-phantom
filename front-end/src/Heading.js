@@ -1,4 +1,4 @@
 
-const Heading = () => <h1>React time</h1>;
+const Heading = () => <h1>Phantom Tattoo</h1>;
 
 export default Heading;

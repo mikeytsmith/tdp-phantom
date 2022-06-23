@@ -19,7 +19,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/trainers", trainerRouter);
+app.use("/artist", artistRouter);
 
 app.use("*", (req, res, next) => next({ status: 404, message: "Invalid url" })); // catches 404's
 

@@ -11,7 +11,7 @@ mongoose.connect(
   }
 );
 
-const trainerSchema = new Schema({
+const artistSchema = new Schema({
   _id: Number, //replace custom id (which is an object containing a string) with own (number) - easier for doing updates/deletes
   name: {
     type: String,
@@ -27,6 +27,6 @@ const trainerSchema = new Schema({
   specialism: String,
 });
 
-const Trainer = mongoose.model("trainer", trainerSchema);
+const Artist = mongoose.model("artist", artistSchema);
 
-module.exports = Trainer;
+module.exports = Artist;

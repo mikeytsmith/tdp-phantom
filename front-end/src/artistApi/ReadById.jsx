@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
-import Trainer from "../Trainer";
+import Artist from "../Artist";
 
 
 const ReadById= ({getData, fetchData}) => {
 
-    const [trainer, setTrainer] = useState([]);
+    const [arist, setArtist] = useState([]);
     const [id, setId] = useState();
 
 
@@ -14,7 +14,7 @@ const ReadById= ({getData, fetchData}) => {
         
         axios.get("http://localhost:4494/trainers/read/"+id)
         .then((res)=>{
-            setTrainer(res.data)
+            setArtist(res.data)
             console.log(res);
 
             setTimeout(()=>{
@@ -30,14 +30,14 @@ const ReadById= ({getData, fetchData}) => {
     return ( 
         <>
         <br/>
-        <h2>Read trainer by ID: </h2>
+        <h2>Read Artist by ID: </h2>
         <br/>
         <input type="number" min={0} placeholder="ID" value={id} onChange={(e)=>{setId(e.target.value)}}/>
         <br/>
         <button className="button button4" onClick={handleReadByID} >READ</button>
         <br/>
         {
-            (<Trainer key={trainer._id} id={trainer._id} name={trainer.name} age={trainer.age} specialism={trainer.specialism}/>)
+            (<Artist key={artist._id} id={artist._id} name={artist.name} age={artist.age} specialism={artist.specialism}/>)
         }
         
         </>
