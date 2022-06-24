@@ -7,7 +7,7 @@ const DeleteArtist = ({getData, fetchData}) => {
     const handleDelete= (e)=>{
         e.preventDefault();
 
-        axios.delete("http://localhost:4494/trainers/remove/"+id)
+        axios.delete("http://localhost:4400/artists/remove/"+id)
         .then(()=>{
                 setTimeout(()=>{
                     getData(!fetchData)

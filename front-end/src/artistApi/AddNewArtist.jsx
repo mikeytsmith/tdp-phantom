@@ -8,7 +8,7 @@ const AddNewArtist = ({ getData, fetchData }) => {
   //age
   // specialism
   const [name, setName] = useState();
-  const [age, setAge] = useState();
+  const [yearsTattooing, setYearsTattooing] = useState();
   const [special, setSpecial] = useState();
   //and id now:
   const [id, setId] = useState();
@@ -17,10 +17,10 @@ const AddNewArtist = ({ getData, fetchData }) => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:4494/trainers/create", {
+      .post("http://localhost:4400/artists/create", {
         _id: id,
         name: name,
-        age: age,
+        yearsTattooing: yearsTattooing,
         specialism: special,
       })
       .then((res) => {
@@ -41,9 +41,9 @@ const AddNewArtist = ({ getData, fetchData }) => {
     e.preventDefault();
 
     axios
-      .put("http://localhost:4494/trainers/update/" + id, {
+      .put("http://localhost:4400/artists/update/" + id, {
         name: name,
-        age: age,
+        yearsTattooing: yearsTattooing,
         specialism: special,
       })
       .then((res) => {
@@ -60,7 +60,7 @@ const AddNewArtist = ({ getData, fetchData }) => {
 
   return (
     <>
-      <h2>Edit trainer list: </h2>
+      <h2>Edit artist list: </h2>
       {/* <form>
         <h4>Insert values into the following boxes: </h4>
         <input
@@ -146,15 +146,15 @@ const AddNewArtist = ({ getData, fetchData }) => {
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Age</Form.Label>
+            <Form.Label>Years Tattooing</Form.Label>
             <Form.Control
               type="number"
               min={1}
               max={150}
-              placeholder="Age"
-              value={age}
+              placeholder="Years Tattooing"
+              value={yearsTattooing}
               onChange={(e) => {
-                setAge(e.target.value);
+                setYearsTattooing(e.target.value);
               }}
             />
           </Form.Group>
@@ -183,4 +183,4 @@ const AddNewArtist = ({ getData, fetchData }) => {
   );
 };
 
-export default AddNewTrainer;
+export default AddNewArtist;

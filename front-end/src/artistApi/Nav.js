@@ -13,16 +13,16 @@ const Navi = () => {
       <Link to="/FindTrainer">Find a Trainer</Link> */}
       <Nav>
         <Nav.Item>
-          <Nav.Link href="/">List of Trainers</Nav.Link>
+          <Nav.Link href="/">List of Artists</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/EditList">Add or Update Trainer</Nav.Link>
+          <Nav.Link href="/EditList">Add or Update Artist</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/DeleteTrainer">Delete a Trainer</Nav.Link>
+          <Nav.Link href="/DeleteArtist">Delete an Artist</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/FindTrainer">Find a Trainer</Nav.Link>
+          <Nav.Link href="/FindArtist">Find an Artist</Nav.Link>
         </Nav.Item>
       </Nav>
     </>

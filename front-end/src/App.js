@@ -1,4 +1,5 @@
-import logo from './logo.svg';
+import mask from '../src/maskspic.png';
+import doorway from '../src/doorway.png';
 import "./App.css";
 import Heading from "./Heading";
 import Artists from "./artistApi/Artists";
@@ -11,16 +12,15 @@ function App() {
       <Heading />
       </header>
       <body>
-      <img src={logo} className="App-logo" alt="logo" />
-      <img src="%PUBLIC_URL%/maskpic.png" className="mask-logo" alt="skull half hiding behind a masquerade mask" />
-      <link rel="mask" href="%PUBLIC_URL%/maskpic.png" />
-      <link rel="apple-touch-mask" href="%PUBLIC_URL%/maskpic.png" />
+      <img src={mask} className="mask-logo" alt="skull half hiding behind a masquerade mask" />
+      <br/>
+      <img src={doorway} className="doorway-logo" alt="stone arch doorway with stairs leading up inside" />
       <br />
       <Button>React button</Button>
       <br />
       <br />
       <br />
-      <Trainers />
+      <Artists />
       </body>
     </div>
   );

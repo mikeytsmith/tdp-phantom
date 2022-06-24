@@ -5,14 +5,14 @@ import Artist from "../Artist";
 
 const ReadById= ({getData, fetchData}) => {
 
-    const [arist, setArtist] = useState([]);
+    const [artist, setArtist] = useState([]);
     const [id, setId] = useState();
 
 
     const handleReadByID= (e)=>{
         e.preventDefault();        
         
-        axios.get("http://localhost:4494/trainers/read/"+id)
+        axios.get("http://localhost:4400/artists/read/"+id)
         .then((res)=>{
             setArtist(res.data)
             console.log(res);
